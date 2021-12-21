@@ -1,12 +1,12 @@
-from openfile_assignment_01_task import cook_book
+from openfile_assignment_01_task import file_opener
 from pprint import pprint
 
 dishes = ['Утка по-пекински', 'Запеченный картофель', 'Омлет']
-person_count = 5
 
 
-def get_shop_list_by_dishes(dishes_list, people):
+def get_shop_list_by_dishes(dishes_list, people=5):
     shop_list = {}
+    cook_book = file_opener()
     for dish in dishes_list:
         for item in cook_book[dish]:
             ingredient = item['ingredient']
@@ -19,7 +19,8 @@ def get_shop_list_by_dishes(dishes_list, people):
     pprint(shop_list)
 
 
-get_shop_list_by_dishes(dishes, person_count)
+if __name__ == '__main__':
+    get_shop_list_by_dishes(dishes)
 
 
 
